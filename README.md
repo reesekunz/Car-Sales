@@ -139,8 +139,33 @@ export default connect(
   {}
 )(Total);
 
+<!-- PHASE 4 Events and Action Creators -->
+
+#11. create an actions folder with index.js file inside (named index.js to make it easier for imports)
+
+#12. index.js (actions folder) => build out actions for user functionality you want added 
+ - User should be able to add features to their car
+- User should be able to remove added features from their car
+- Total should update as user adds and removes features from their car
+
+#13. AdditionalFeature.js => import addFeature action and connect it with export 
+(AdditionalFeature.js is where you will be adding a feature with the onClick button)
+
+import { addFeature } from "../actions";
+
+export default connect(
+  mapStateToProps,
+  { addFeature }
+)(AdditionalFeature);
 
 
+#14. AdditonalFeature.js => convert to a class component & add onClick to button that will let you add feature to car 
+  addFeature = event => {
+    event.preventDefault();
+    // invokes addFeature action 
+    this.props.addFeature(this.state.newFeature);
+  };
 
+  <button className="button" onClick={this.addFeature}>
 
-
+  

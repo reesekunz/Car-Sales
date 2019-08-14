@@ -22,5 +22,5 @@ const AddedFeature = props => {
 // added functionality - state properties coming in on props (connecting it to redux store and bringing in pieces of state tree - eg. features - as props )
 export default connect(
   mapStateToProps,
-  {}
+  {  }
 )(AddedFeature);
