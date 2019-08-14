@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    features: state.features
+    car: state.car
   };
 };
 
