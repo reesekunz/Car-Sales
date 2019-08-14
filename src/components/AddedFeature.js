@@ -1,5 +1,13 @@
 import React from 'react';
 
+import { connect } from "react-redux";
+
+const mapStateToProps => {
+  return {
+  
+  };
+};
+
 const AddedFeature = props => {
   return (
     <li>

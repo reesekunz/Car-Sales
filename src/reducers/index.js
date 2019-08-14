@@ -17,7 +17,7 @@ export const initialState = {
     ]
   };
 
-  export const featureReducer = (state, action) {
+  export const featureReducer = (state = initialState, action) => {
     switch (action.type) {
         // case 'TOGGLE_EDITING':
         //   return {

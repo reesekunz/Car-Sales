@@ -89,8 +89,8 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 
 <!-- PHASE 1 Setting up empty reducer and initial state  -->
 #2. create reducers folder with a reducers.js file 
-Export Two Things - initialState (taken from state object in app.js), reducer function (empty for now)
-
+Export Two Things - initialState (taken from state object in app.js), reducer function (featureReducer - empty for now)
+import featureReducer into index.js 
 
 <!-- PHASE 2 Setting up store and provider  -->
 #3. index.js => import createStore function from redux
@@ -118,4 +118,6 @@ import { Provider } from "react-redux";
 - the prop store will get passed into provider and takes in the created store, this makes our store accessible by everything inside our app 
 
 <!-- PHASE 3 Connecting React Components to Redux Store  -->
-#8. 
+#8. import { connect } from "react-redux" on components
+
+#9. mapStateToProps 
