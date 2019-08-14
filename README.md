@@ -81,3 +81,33 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 - Implement React-Router and add a starter page where the user can choose a car. Each car should have different features that have different pricing. Have fun with this! It could end up being really cool.
 - Look into the docs for Bulma and change up the styling.
 - Implement an API from one of these sites [here](https://www.google.com/search?q=car+sales+api&rlz=1C5CHFA_enUS809US809&oq=car+sales+api&aqs=chrome..69i57j0l5.3580j0j1&sourceid=chrome&ie=UTF-8). I don't know if there are any good open APIs for this, so explore around. Check out what data these APIs return, and what you think would be fun to work with. The sky is the limit here!
+
+#PROJECT STEPS 
+
+#1. - yarn add react-redux redux
+
+#2. index.js => import createStore function from redux
+import { createStore } from 'redux';
+
+#3. index.js => create a store variable and use createStore to create the redux store
+const store = createStore(reducer);
+
+#4. index.js => create reducer function (function that returns an object that is our state tree)
+function reducer() {
+    return {
+    title: "Hi from the Redux store!! "
+}}
+
+#5. index.js => import Provider from react-redux
+import { Provider } from "react-redux";
+
+#6. index.js => Wrap Provider in App component 
+<Provider>
+<App />
+</Provider>
+
+#7. index.js => pass created Store into Provider component 
+<Provider store={store}>
+- the prop store will get passed into provider and takes in the created store, this makes our store accessible by everything inside our app 
+
+
