@@ -119,5 +119,28 @@ import { Provider } from "react-redux";
 
 <!-- PHASE 3 Connecting React Components to Redux Store  -->
 #8. import { connect } from "react-redux" on components
+import { connect } from "react-redux";
 
-#9. mapStateToProps 
+#9. mapStateToProps: create a mapStateToProps function inside each component that uses props, passing the state from the reducer for each prop being referenced. 
+Example:
+
+const mapStateToProps = state => {
+  return {
+    car: state.car,
+    additionalPrice: state.additionalPrice
+  };
+};
+
+#10. Connect the mapStateToProps with the exported component. Repeat steps 8 - 10 for each component using props 
+Example:
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Total);
+
+
+
+
+
+

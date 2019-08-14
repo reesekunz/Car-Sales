@@ -2,6 +2,11 @@ import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 import { connect } from "react-redux";
 
+const mapStateToProps = state => {
+  return {
+    store: state.store
+  };
+};
 
 const AdditionalFeatures = props => {
   return (
@@ -20,4 +25,8 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+export default connect(
+  mapStateToProps,
+  {}
+)(AdditionalFeatures);
+

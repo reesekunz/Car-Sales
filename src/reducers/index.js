@@ -1,5 +1,6 @@
 // Export Two Things - initialState, reducer function
 
+
 export const initialState = {
     additionalPrice: 0,
     car: {
