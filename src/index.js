@@ -4,8 +4,11 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from "react-redux";
 
+import { featureReducer } from "./reducers/reducer"; 
+
 import 'bulma/css/bulma.css';
 import './styles.scss';
+
 
 const store = createStore(reducer);
 

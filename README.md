@@ -84,30 +84,38 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 
 #PROJECT STEPS 
 
+<!-- PHASE 0 Install dependencies  -->
 #1. - yarn add react-redux redux
 
-#2. index.js => import createStore function from redux
+<!-- PHASE 1 Setting up empty reducer and initial state  -->
+#2. create reducers folder with a reducers.js file 
+Export Two Things - initialState (taken from state object in app.js), reducer function (empty for now)
+
+
+<!-- PHASE 2 Setting up store and provider  -->
+#3. index.js => import createStore function from redux
 import { createStore } from 'redux';
 
-#3. index.js => create a store variable and use createStore to create the redux store
+#4. index.js => create a store variable and use createStore to create the redux store
 const store = createStore(reducer);
 
-#4. index.js => create reducer function (function that returns an object that is our state tree)
+#5. index.js => create reducer function (function that returns an object that is our state tree)
 function reducer() {
     return {
     title: "Hi from the Redux store!! "
 }}
 
-#5. index.js => import Provider from react-redux
+#6. index.js => import Provider from react-redux
 import { Provider } from "react-redux";
 
-#6. index.js => Wrap Provider in App component 
+#7. index.js => Wrap Provider in App component 
 <Provider>
 <App />
 </Provider>
 
-#7. index.js => pass created Store into Provider component 
+#8. index.js => pass created Store into Provider component 
 <Provider store={store}>
 - the prop store will get passed into provider and takes in the created store, this makes our store accessible by everything inside our app 
 
-
+<!-- PHASE 3 Connecting React Components to Redux Store  -->
+#8. 
