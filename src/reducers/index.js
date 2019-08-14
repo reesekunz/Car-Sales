@@ -19,16 +19,27 @@ export const initialState = {
   };
 
   export const featureReducer = (state = initialState, action) => {
+    console.log('action pay', action.payload)
     switch (action.type) {
-        // case 'TOGGLE_EDITING':
-        //   return {
-           
-        //   };
-        // case 'UPDATE_TITLE':
-        //   return {
-         
+        case 'ADD_FEATURE':
+          return {
+            ... state, 
+            additionalPrice: state.additionalPrice + action.payload.price,
         
-        //   };
+            
+            car: {
+              ...state.car,
+              features: [...state.car.features, action.payload.name]
+            }
+            
+          }; 
+
+        case 'DELETE_FEATURE':
+          return {
+         ... state, 
+        
+          };
+
         default:
           return state;
       }

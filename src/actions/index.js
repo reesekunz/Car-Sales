@@ -8,15 +8,15 @@
 export const ADD_FEATURE = "ADD_FEATURE";
 
 // action creator 
-export const addFeature = featureName => {
-console.log("addFeature = ", featureName)
+export const addFeature = feature => {
+console.log("addFeature = ", feature)
 
 return { 
 // action itself 
 // pass in variable name created above (type is required) 
-type: ADD_FEATURE, 
+type: "ADD_FEATURE", 
 // (most actions have payload but not required)
-payload: featureName
+payload: feature
 
 }
 }

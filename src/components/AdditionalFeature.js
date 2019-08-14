@@ -3,14 +3,11 @@ import { connect } from "react-redux";
 import { addFeature } from "../actions";
 
 class AdditionalFeature extends React.Component {
-  state = {
-    newFeature: "",
-  };
-
+ 
   addFeature = event => {
     event.preventDefault();
     // invokes addFeature action 
-    this.props.addFeature(this.state.newFeature);
+    this.props.addFeature(this.props.feature);
   };
 
 

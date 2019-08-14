@@ -6,18 +6,26 @@ import { deleteFeature } from "../actions";
 
 // Getting features from reducer. 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     features: state.features
   };
 };
 
+
 const AddedFeature = props => {
+
+  const deleteFeature = event => {
+    // invokes addFeature action 
+    props.deleteFeature(props.feature);
+  };
+
   return (
     <li>
       {/* Add an onClick to run a function to remove a feature */}
-      <button className="button" onClick={this.deleteFeature}>
+      <button className="button" onClick={deleteFeature}>
       Remove Feature</button>
-      {props.feature.name}
+      {props.feature}
     </li>
   );
 };

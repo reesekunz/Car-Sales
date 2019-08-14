@@ -168,4 +168,10 @@ export default connect(
 
   <button className="button" onClick={this.addFeature}>
 
-  
+
+#15. Do the same thing for steps 13 - 14 but for deleting a feature (in AddedFeature.js)
+
+<!-- PHASE 5  After setting up actions, reference the actions set up in your reducers.
+(Write the reducer logic for the actions) 
+-->
+
