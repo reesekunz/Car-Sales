@@ -5,7 +5,6 @@ import { addFeature } from "../actions";
 class AdditionalFeature extends React.Component {
  
   addFeature = event => {
-    event.preventDefault();
     // invokes addFeature action 
     this.props.addFeature(this.props.feature);
   };
@@ -18,7 +17,7 @@ class AdditionalFeature extends React.Component {
         <button className="button" onClick={this.addFeature}>
           Add
         </button>
-        {this.props.feature.name} (+{this.props.feature.price})
+        {this.props.feature.name} (+${this.props.feature.price})
       </li>
     );
   }
