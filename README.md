@@ -81,3 +81,97 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 - Implement React-Router and add a starter page where the user can choose a car. Each car should have different features that have different pricing. Have fun with this! It could end up being really cool.
 - Look into the docs for Bulma and change up the styling.
 - Implement an API from one of these sites [here](https://www.google.com/search?q=car+sales+api&rlz=1C5CHFA_enUS809US809&oq=car+sales+api&aqs=chrome..69i57j0l5.3580j0j1&sourceid=chrome&ie=UTF-8). I don't know if there are any good open APIs for this, so explore around. Check out what data these APIs return, and what you think would be fun to work with. The sky is the limit here!
+
+#PROJECT STEPS 
+
+<!-- PHASE 0 Install dependencies  -->
+#1. - yarn add react-redux redux
+
+<!-- PHASE 1 Setting up empty reducer and initial state  -->
+#2. create reducers folder with a reducers.js file 
+Export Two Things - initialState (taken from state object in app.js), reducer function (featureReducer - empty for now)
+import featureReducer into index.js 
+
+<!-- PHASE 2 Setting up store and provider  -->
+#3. index.js => import createStore function from redux
+import { createStore } from 'redux';
+
+#4. index.js => create a store variable and use createStore to create the redux store
+const store = createStore(reducer);
+
+#5. index.js => create reducer function (function that returns an object that is our state tree)
+function reducer() {
+    return {
+    title: "Hi from the Redux store!! "
+}}
+
+#6. index.js => import Provider from react-redux
+import { Provider } from "react-redux";
+
+#7. index.js => Wrap Provider in App component 
+<Provider>
+<App />
+</Provider>
+
+#8. index.js => pass created Store into Provider component 
+<Provider store={store}>
+- the prop store will get passed into provider and takes in the created store, this makes our store accessible by everything inside our app 
+
+<!-- PHASE 3 Connecting React Components to Redux Store  -->
+#8. import { connect } from "react-redux" on components
+import { connect } from "react-redux";
+
+#9. mapStateToProps: create a mapStateToProps function inside each component that uses props, passing the state from the reducer for each prop being referenced. 
+Example:
+
+const mapStateToProps = state => {
+  return {
+    car: state.car,
+    additionalPrice: state.additionalPrice
+  };
+};
+
+#10. Connect the mapStateToProps with the exported component. Repeat steps 8 - 10 for each component using props 
+Example:
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Total);
+
+<!-- PHASE 4 Events and Action Creators -->
+
+#11. create an actions folder with index.js file inside (named index.js to make it easier for imports)
+
+#12. index.js (actions folder) => build out actions for user functionality you want added 
+ - User should be able to add features to their car
+- User should be able to remove added features from their car
+- Total should update as user adds and removes features from their car
+
+#13. AdditionalFeature.js => import addFeature action and connect it with export 
+(AdditionalFeature.js is where you will be adding a feature with the onClick button)
+
+import { addFeature } from "../actions";
+
+export default connect(
+  mapStateToProps,
+  { addFeature }
+)(AdditionalFeature);
+
+
+#14. AdditonalFeature.js => convert to a class component & add onClick to button that will let you add feature to car 
+  addFeature = event => {
+    event.preventDefault();
+    // invokes addFeature action 
+    this.props.addFeature(this.state.newFeature);
+  };
+
+  <button className="button" onClick={this.addFeature}>
+
+
+#15. Do the same thing for steps 13 - 14 but for deleting a feature (in AddedFeature.js)
+
+<!-- PHASE 5  After setting up actions, reference the actions set up in your reducers.
+(Write the reducer logic for the actions) 
+-->
+
